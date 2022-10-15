@@ -1,23 +1,36 @@
 import React, { useState } from 'react';
+import { addComma, enteredOnlyNumber , deleteComma} from './utils';
 
 function AddItemForm({ onInsert, onCancel }) {
     
+
     const TITLE_SIZE = 20;
     const [enteredDate, setEnteredDate] = useState("");
     const [enteredTitle, setEnteredTitle] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
     const [enteredType, setEnteredType] = useState("income");
 
+    const [isTitleSizeOver, setIsTitleSizeOver] = useState(false);
+    const [isEnteredWrongAmount, setIsEnteredWrongAmount] = useState(false);
+
     const onChangeDate = (e) => {
         setEnteredDate(e.target.value);
     }
     const onChangeTitle = (e) => {
         //제목 길이 제한
+        let isSizeOver = e.target.value.length > TITLE_SIZE ? true : false;
+        setIsTitleSizeOver(isSizeOver);
+
         setEnteredTitle(e.target.value);
     }
     const onChangeAmount = (e) => {
         //숫자가 아닌 것 제한
-        setEnteredAmount(e.target.value);
+        let isNotNumber = /^[^1-9][^0-9]{0,11}$/g.test(e.target.value) ? true : false;
+        setIsEnteredWrongAmount(isNotNumber);
+        if (isNotNumber) return;
+
+        let amount = addComma(enteredOnlyNumber(e.target.value));
+        setEnteredAmount(amount);
     }
     const onChangeType = (e) => {
         setEnteredType(e.target.value);
@@ -27,7 +40,8 @@ function AddItemForm({ onInsert, onCancel }) {
         const enteredData = {
             date: new Date(enteredDate),
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: deleteComma(enteredAmount),
+            type: enteredType
         };
         onInsert(enteredData);//부모인 AddItem에게 전달
 
@@ -38,7 +52,7 @@ function AddItemForm({ onInsert, onCancel }) {
     }
     return (
         <form className="addItemForm_cotainer" onSubmit={onSubmitHandler}>
-            <div className="addItemForm_title">
+            <div className="addItemForm_info">
                 <h2>날짜</h2>
                 <input
                     type="date"
@@ -50,8 +64,11 @@ function AddItemForm({ onInsert, onCancel }) {
                 />
             </div>
 
-            <div className="addItemForm_title">
-                <h2>제목</h2>
+            <div className="addItemForm_info">
+                <div className='addItemForm_info_title'>
+                    <h2>제목</h2>
+                </div>
+                
                 <input
                     type="text"
                     value={enteredTitle}
@@ -61,8 +78,10 @@ function AddItemForm({ onInsert, onCancel }) {
                     required
                 />
             </div>
-            <div className="addItemForm_title">
-                <h2>금액</h2>
+            <div className="addItemForm_info">
+                 <div className='addItemForm_info_title'>
+                    <h2>금액</h2>
+                </div>
                 <input
                     type="text"
                     value={enteredAmount}
@@ -72,6 +91,7 @@ function AddItemForm({ onInsert, onCancel }) {
                     required
                     />
             </div>
+
             <div className='amount_type'>
                 <div className='amount_income'>
                     <input

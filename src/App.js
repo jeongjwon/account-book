@@ -20,7 +20,7 @@ function App() {
     }
     const localNextItemId = +localStorage.getItem("nextItemId");
 
-    console.log(localStorage + " , " + localNextItemId);
+    
 
   }, []);
 
@@ -30,6 +30,7 @@ function App() {
   }, [items]);
 
   const addItemHandler = (addItemData) => {
+    //추가 된다면 
     setNextItemId(nextItemId + 1);
     setIsAddItem(true);
 
@@ -37,10 +38,11 @@ function App() {
       return [...prev, addItemData];
     });
   };
+  
 
   return (
     <>
-      < PocketContainer
+       <PocketContainer
         items={items}
         isAddItem={isAddItem} />
       
