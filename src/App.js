@@ -39,12 +39,20 @@ function App() {
     });
   };
   
+  const deleteItemHandler = (deleteItemData) => {
+    setIsAddItem(false);
+
+    let copyItems = [...items];
+    copyItems = copyItems.filter(item => item.id !== deleteItemData);
+    setItems(copyItems);
+  }
 
   return (
     <>
        <PocketContainer
         items={items}
-        isAddItem={isAddItem} />
+        isAddItem={isAddItem}
+        onDeleteItem={deleteItemHandler} />
       
       <AddContainer
         nextItemId={nextItemId}

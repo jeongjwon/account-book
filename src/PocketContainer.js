@@ -3,7 +3,7 @@ import PocketList from './PocketList';
 import React, { useEffect, useState } from 'react';
 //props -> items, onDeleteItem, isAddItem
 
-function PocketContainer({ items, isAddItem }) {
+function PocketContainer({ items, isAddItem, onDeleteItem}) {
     const initialFilterBaseYear = new Date().getFullYear().toString();
     const [filterBaseYear, setFilterBaseYear] = useState(initialFilterBaseYear);
 
@@ -28,14 +28,24 @@ function PocketContainer({ items, isAddItem }) {
             item => item.type === "expense");
     }
 
-    
+    const onChangeFilterYear = (selectedYear) => {
+        setFilterBaseYear(selectedYear);
+    }
+    const deleteItemHandler = (selectedItemId) => {
+        onDeleteItem(selectedItemId);
+    }
 
     return (
         <div className="pocket_container">
             <PocketStatus
                 filteredItems={filteredItems}
-                filteredBaseYear={filterBaseYear} />
-            <PocketList />
+                filterBaseYear={filterBaseYear} />
+            
+            <PocketList
+                filteredItems={filteredItems}
+                filterBaseYear={filterBaseYear}
+                onChangeFilterYear={onChangeFilterYear}
+                onDeleteItem={deleteItemHandler} />
         </div>
     )
 }

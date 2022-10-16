@@ -3,7 +3,6 @@ import AddItemForm from "./AddItemForm";
 
 function AddItem( {insertItem, onCancel}) {
     const insertItemHandler = (data) => {
-        console.log(data);
         insertItem(data);
     };
     const stopEditHandler = (e) => {

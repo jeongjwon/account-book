@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { addComma } from './utils';
 
-function PocketStatus({ filteredItems, filteredBaseYear }) {
+function PocketStatus({ filteredItems, filterBaseYear }) {
     //filteredItem
     //총 수입, 총 지출 , 총 자산, 올해연도
 
     const [totalIncome, setTotalIncome] = useState(0);
     const [totalExpense, setTotalExpense] = useState(0);
     const [totalMoney, setTotalMoney] = useState(0);
-    const year = filteredBaseYear;
+    const year = filterBaseYear;
     
     
     useEffect(() => {
@@ -39,9 +39,9 @@ function PocketStatus({ filteredItems, filteredBaseYear }) {
                 <strong>{addComma(totalMoney.toString())}원</strong>
             </div>
             <div className="pockset_status_detail">
-                <sapn>수입</sapn>
+                <span>수입</span>
                 <strong>{addComma(totalIncome.toString())}원</strong>
-                <sapn>지출</sapn>
+                <span>지출</span>
                 <strong>{addComma(totalExpense.toString())}원</strong>
             </div>
 
