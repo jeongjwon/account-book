@@ -1,5 +1,6 @@
 import react, { useState } from 'react';
 import AddItem from "./AddItem";
+import './AddContainer.css';
 
 function AddContainer({ nextItemId, onAddItem }) {
     const [edit, setEdit] = useState(false);
@@ -24,7 +25,7 @@ function AddContainer({ nextItemId, onAddItem }) {
         
         <div className="add_container">
             { !edit &&
-                <button onClick={startEditHandler}>내역 추가하기</button>
+                <button className="btn_gray" onClick={startEditHandler}>내역 추가하기</button>
             }
 
             {edit &&

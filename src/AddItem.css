@@ -1,0 +1,9 @@
+.addItemContainer{
+    position: relative;
+
+}
+
+.addItemContainer h1{
+    font-size: 1.5rem;
+    border-bottom: 1.2rem bolid gray;
+}

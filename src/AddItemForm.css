@@ -1,0 +1,42 @@
+.addItemForm_container{
+    border-top : 1.2px solid gray;
+}
+.addItemForm_info{
+    margin: 1rem 0;
+}
+.addItemForm_info_title h2{
+    font-size: 1rem;
+}
+.addItemForm_info input{
+    width: 97%;
+    height: 2rem;
+    border-radius: 4px;
+    border : 1px solid gray;
+}
+
+.amount_type{
+    display: flex;
+    flex-direction: row;
+    font-size: 0.7rem;
+    margin: 1rem 0;
+}
+
+
+
+
+.addItemForm_container_footer{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.addItemForm_container_footer button{
+    width: 10rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-gray{
+    background-color: darkgray;
+    
+}

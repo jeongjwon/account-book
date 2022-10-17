@@ -1,5 +1,6 @@
 import Item from './Item';
 import React from 'react';
+import './PocketItem.css';
 
 function PocketItems({ filteredItems, onDeleteItem }) {
     if (filteredItems.length === 0) {

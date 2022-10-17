@@ -1,6 +1,6 @@
 import React from 'react';
 import PocketItems from './PocketItems';
-
+import './PocketList.css';
 function PocketList({ filteredItems, filterBaseYear,onChangeFilterYear,onDeleteItem }) {
     //날짜 필터
     const filterChange = (selectedYear) => {

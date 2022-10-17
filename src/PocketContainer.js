@@ -1,6 +1,7 @@
 import PocketStatus from './PocketStatus';
 import PocketList from './PocketList';
 import React, { useEffect, useState } from 'react';
+import './PocketContainer.css';
 //props -> items, onDeleteItem, isAddItem
 
 function PocketContainer({ items, isAddItem, onDeleteItem}) {

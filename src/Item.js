@@ -14,7 +14,9 @@ function Item({   id, date, title, amount, type, onDeleteItem }) {
     if(itemType === "expense") {
         fontSylteByType = fontSylteByType.replace("green", "red");
         itemAmount = itemAmount.replace("+", "-");
-    }
+    } 
+    console.log(itemType + " , " + itemAmount);
+    
     const itemClick = () => {
         if (itemClickCount % 2 === 0) {
             setIsItemClick(true);
@@ -36,7 +38,7 @@ function Item({   id, date, title, amount, type, onDeleteItem }) {
     return (
 
         <div className={itemType} onClick={itemClick}>
-            <div>
+            <div className="item_left">
                 <span className="item_date">
                     {date.getFullYear()}-{date.getMonth()}-{date.getDate()}
                 </span>

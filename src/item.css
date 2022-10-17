@@ -1,17 +1,30 @@
 .item {
     display:flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    padding: 1rem;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+    margin: 1.2rem 0;
     
 }
-
+.item_left
+{
+   
+    font-size: 0.8rem;
+}
 .item_title{
     display: flex;
     justify-content: space-between;
-        align-items: center;
+    align-items: center;
+    
+}
+.item strong{
+    flex-grow: 1;
+}
+.item.income{
+    border-right: 5px solid #5ADB5A;
 }
 
-
-.green{
-
+.item.expense {
+    border-right: 5px solid red;
 }

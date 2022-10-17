@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { addComma, enteredOnlyNumber , deleteComma} from './utils';
-
+import './AddItemForm.css';
 function AddItemForm({ onInsert, onCancel }) {
     
 
@@ -51,15 +51,19 @@ function AddItemForm({ onInsert, onCancel }) {
 
     }
     return (
-        <form className="addItemForm_cotainer" onSubmit={onSubmitHandler}>
+        <form className="addItemForm_container" onSubmit={onSubmitHandler}>
             <div className="addItemForm_info">
-                <h2>날짜</h2>
+                <div className="addItemForm_info_title">
+                    <h2>날짜</h2>
+                </div>
+                
                 <input
                     type="date"
                     value={enteredDate}
                     onChange={onChangeDate}
                     min="2022-01-01"
                     max={new Date().toISOString().substring(0,10)} //2022-10-22
+                    
                     required
                 />
             </div>
@@ -121,7 +125,7 @@ function AddItemForm({ onInsert, onCancel }) {
             </div>
 
             <div className="addItemForm_container_footer">
-                <button type="submit">등록</button>
+                <button className="btn-gray" type="submit">등록</button>
                 <button onClick={onCancel}>취소</button>
 
             </div>

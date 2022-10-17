@@ -1,6 +1,6 @@
 import React from 'react';
 import AddItemForm from "./AddItemForm";
-
+import './AddItem.css';
 function AddItem( {insertItem, onCancel}) {
     const insertItemHandler = (data) => {
         insertItem(data);

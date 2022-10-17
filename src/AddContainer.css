@@ -1,0 +1,29 @@
+.add_container {
+    position: relative;
+    width: 400px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 30px auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+button{
+width: 50%;
+    border: none;
+    border-radius: 5px;
+    padding: 18px 25px;
+
+    cursor: pointer;
+}
+.btn_gray {
+    
+    justify-content: center;
+    
+    background-color: darkgray;
+    font-size: 1rem;
+    margin-left: 90px;
+    
+
+}
