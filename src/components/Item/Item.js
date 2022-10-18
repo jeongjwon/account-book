@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { addComma } from './utils';
-import './item.css';
+import { addComma } from '../utils';
+import './Item.css';
 function Item({   id, date, title, amount, type, onDeleteItem }) {
     const [isItemClick, setIsItemClick] = useState(false);
     const [itemClickCount, setItemClickCount] = useState(0);
@@ -11,7 +11,7 @@ function Item({   id, date, title, amount, type, onDeleteItem }) {
     const itemTitle = title;
     let itemAmount = "+" + addComma(amount.toString());
 
-    if(itemType === "expense") {
+    if(type === "expense") {
         fontSylteByType = fontSylteByType.replace("green", "red");
         itemAmount = itemAmount.replace("+", "-");
     } 
@@ -38,7 +38,7 @@ function Item({   id, date, title, amount, type, onDeleteItem }) {
     return (
 
         <div className={itemType} onClick={itemClick}>
-            <div className="item_left">
+            <div >
                 <span className="item_date">
                     {date.getFullYear()}-{date.getMonth()}-{date.getDate()}
                 </span>

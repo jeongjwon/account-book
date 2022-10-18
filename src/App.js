@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import PocketContainer from './PocketContainer';
-import AddContainer from './AddContainer';
+import AccountContainer from './components/Account/AccountContainer';
+import AddContainer from './components/Add/AddContainer';
 
 function App() {
     const [isAddItem, setIsAddItem] = useState(false);
@@ -49,7 +49,7 @@ function App() {
 
   return (
     <>
-       <PocketContainer
+       <AccountContainer
         items={items}
         isAddItem={isAddItem}
         onDeleteItem={deleteItemHandler} />

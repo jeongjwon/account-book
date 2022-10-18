@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addComma, enteredOnlyNumber , deleteComma} from './utils';
+import { addComma, enteredOnlyNumber , deleteComma} from '../utils';
 import './AddItemForm.css';
 function AddItemForm({ onInsert, onCancel }) {
     

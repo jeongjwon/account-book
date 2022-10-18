@@ -5,24 +5,24 @@
     padding: 1rem;
     box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
     margin: 1.2rem 0;
-    
-}
-.item_left
-{
-   
     font-size: 0.8rem;
+    border-radius: 2px;
 }
-.item_title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+/* .item_title{
+   
     
-}
+    justify-content: space-between;
+    align-items: flex-end;
+    
+} */
 .item strong{
     flex-grow: 1;
+    font-size: 1rem;
 }
 .item.income{
     border-right: 5px solid #5ADB5A;
+
 }
 
 .item.expense {

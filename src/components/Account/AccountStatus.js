@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { addComma } from './utils';
-import './PocketStatus.css';
-function PocketStatus({ filteredItems, filterBaseYear }) {
+import { addComma } from '../utils';
+import './AccountStatus.css';
+
+function AccountStatus({ filteredItems, filterBaseYear }) {
     //filteredItem
     //총 수입, 총 지출 , 총 자산, 올해연도
 
@@ -31,20 +32,20 @@ function PocketStatus({ filteredItems, filterBaseYear }) {
     }, [filteredItems]);
 
     return (
-        <div className="pocket_status">
-            <div className="pocket_status_title">
+        <div className="account_status">
+            <div className="account_status_title">
                 {year}년 자산현황
             </div>
 
-            <div className="pocket_status_cost">
+            <div className="account_status_cost">
                 <strong>{addComma(totalMoney.toString())}원</strong>
             </div>
-            <div className="pocket_status_detail">
-                <div className="pocket_status_detail_income">
+            <div className="account_status_detail">
+                <div className="account_status_detail_income">
                     <span>수입</span>
                     <strong>{addComma(totalIncome.toString())}원</strong>
                 </div>
-                <div className="pocket_status_detail_expense">
+                <div className="account_status_detail_expense">
                     <span>지출</span>
                     <strong>{addComma(totalExpense.toString())}원</strong>
                 </div>
@@ -55,4 +56,4 @@ function PocketStatus({ filteredItems, filterBaseYear }) {
         </div>
     )
 }
-export default PocketStatus;
+export default AccountStatus;

@@ -1,8 +1,8 @@
-import Item from './Item';
+import Item from  '../Item/Item';
 import React from 'react';
-import './PocketItem.css';
+import './AccountItem.css';
 
-function PocketItems({ filteredItems, onDeleteItem }) {
+function AccountItems({ filteredItems, onDeleteItem }) {
     if (filteredItems.length === 0) {
         return (
             <div className='pocketItems'>
@@ -31,7 +31,7 @@ function PocketItems({ filteredItems, onDeleteItem }) {
     }
 
     return (
-        <div className="pocketItems">
+        <div className="accountItems">
             {sortedFilteredItems.map(item => (
                     <Item
                         key={item.id}
@@ -46,4 +46,4 @@ function PocketItems({ filteredItems, onDeleteItem }) {
         </div>
     );
 }
-export default PocketItems;
+export default AccountItems;

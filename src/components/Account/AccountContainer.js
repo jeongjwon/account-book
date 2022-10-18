@@ -1,10 +1,10 @@
-import PocketStatus from './PocketStatus';
-import PocketList from './PocketList';
+import AccountStatus from './AccountStatus';
+import AccountList from './AccountList';
 import React, { useEffect, useState } from 'react';
-import './PocketContainer.css';
+import './AccountContainer.css';
 //props -> items, onDeleteItem, isAddItem
 
-function PocketContainer({ items, isAddItem, onDeleteItem}) {
+function AccountContainer({ items, isAddItem, onDeleteItem}) {
     const initialFilterBaseYear = new Date().getFullYear().toString();
     const [filterBaseYear, setFilterBaseYear] = useState(initialFilterBaseYear);
 
@@ -37,12 +37,12 @@ function PocketContainer({ items, isAddItem, onDeleteItem}) {
     }
 
     return (
-        <div className="pocket_container">
-            <PocketStatus
+        <div className="account_container">
+            <AccountStatus
                 filteredItems={filteredItems}
                 filterBaseYear={filterBaseYear} />
             
-            <PocketList
+            <AccountList
                 filteredItems={filteredItems}
                 filterBaseYear={filterBaseYear}
                 onChangeFilterYear={onChangeFilterYear}
@@ -50,4 +50,4 @@ function PocketContainer({ items, isAddItem, onDeleteItem}) {
         </div>
     )
 }
-export default PocketContainer;
+export default AccountContainer;

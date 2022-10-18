@@ -1,7 +1,7 @@
 import React from 'react';
-import PocketItems from './PocketItems';
-import './PocketList.css';
-function PocketList({ filteredItems, filterBaseYear,onChangeFilterYear,onDeleteItem }) {
+import AccountItems from './AccountItems';
+import './AccountList.css';
+function AccountList({ filteredItems, filterBaseYear,onChangeFilterYear,onDeleteItem }) {
     //날짜 필터
     const filterChange = (selectedYear) => {
         onChangeFilterYear(selectedYear);
@@ -11,8 +11,8 @@ function PocketList({ filteredItems, filterBaseYear,onChangeFilterYear,onDeleteI
     }
 
     return (
-        <div className='pocketList_container'>
-            <div className='pocketList_header'>
+        <div className='accountList_container'>
+            <div className='accountList_header'>
                 <h2>연간내역</h2>
                 <select
                     id="filter"
@@ -24,11 +24,11 @@ function PocketList({ filteredItems, filterBaseYear,onChangeFilterYear,onDeleteI
                     <option value="2021">2021</option>
                 </select>
             </div>
-            
-            <PocketItems
+            <br></br>
+            <AccountItems
                 filteredItems={filteredItems}
                 onDeleteItem={deleteItemHandler} />
         </div>
     )
 }
-export default PocketList;
+export default AccountList;

@@ -1,0 +1,37 @@
+.account_status{
+    border-radius: 4px;
+   
+    padding: 1.2rem;
+}   
+
+.account_status_title{
+    color: gray;
+}
+
+.account_status_cost{
+    font-size: 1.4rem;
+}
+
+.account_status_detail{
+    border-radius: 8px;
+    
+    padding: 1.2rem;
+    margin-top: 0.5rem ;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+    display: flex;
+    justify-content: space-around;
+
+}
+.account_status_detail_income {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.account_status_detail_expense{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+.account_status_detail span{
+    padding-left: 20px;
+}

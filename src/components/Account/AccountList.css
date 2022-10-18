@@ -1,12 +1,16 @@
-.pocketList_container{
+.accountList_container{
     padding: 1.2rem;
 }
 
-.pocketList_header{
+.accountList_header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom : 2px;
     border-bottom: 1.2px solid #666;
+}
+.accountList_header h2{
+    font-size: 1.2rem;
 }
  select{
     float: right;
