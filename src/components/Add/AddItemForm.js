@@ -125,8 +125,8 @@ function AddItemForm({ onInsert, onCancel }) {
             </div>
 
             <div className="addItemForm_container_footer">
-                <button className="btn-gray" type="submit">등록</button>
-                <button onClick={onCancel}>취소</button>
+                <button className="btn-navy" type="submit">등록</button>
+                <button className="btn-gray" onClick={onCancel}>취소</button>
 
             </div>
         </form>

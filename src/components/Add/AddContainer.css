@@ -17,11 +17,11 @@ width: 50%;
 
     cursor: pointer;
 }
-.btn_gray {
+.btn_navy {
     
     justify-content: center;
-    
-    background-color: darkgray;
+    color:white;
+    background-color: #204960;
     font-size: 1rem;
     margin-left: 90px;
     

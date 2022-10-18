@@ -25,7 +25,7 @@ function AddContainer({ nextItemId, onAddItem }) {
         
         <div className="add_container">
             { !edit &&
-                <button className="btn_gray" onClick={startEditHandler}>내역 추가하기</button>
+                <button className="btn_navy" onClick={startEditHandler}>내역 추가하기</button>
             }
 
             {edit &&
