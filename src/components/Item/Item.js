@@ -49,7 +49,7 @@ function Item({   id, date, title, amount, type, onDeleteItem }) {
                         style={{ display: isItemClick === true ? "flex" : "none" }}
                         onClick={deleteButtonClick}
                     >
-                         <span>아이템 삭제</span>
+                         <span >❎</span>
                     </button>
                     <h3>{itemTitle}</h3>
                 </div>
